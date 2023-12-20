@@ -45,7 +45,7 @@ func InputFormatFromString(format string) (InputFormat, error) {
 	case "lua", "l":
 		return LuaInputFormat, nil
 	default:
-		return 0, fmt.Errorf("unknown format '%v' please use [yaml|json|props|csv|tsv|xml|toml]", format)
+		return 0, fmt.Errorf("unknown format '%v' please use [yaml|json|props|csv|tsv|xml|toml|lua]", format)
 	}
 }
 

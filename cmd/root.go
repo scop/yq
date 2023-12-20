@@ -67,12 +67,12 @@ yq -P -oy sample.json
 		panic(err)
 	}
 
-	rootCmd.PersistentFlags().StringVarP(&outputFormat, "output-format", "o", "auto", "[auto|a|yaml|y|json|j|props|p|xml|x|tsv|t|csv|c] output format type.")
-	if err = rootCmd.RegisterFlagCompletionFunc("output-format", cobra.FixedCompletions([]string{"auto", "yaml", "json", "props", "xml", "tsv", "csv"}, cobra.ShellCompDirectiveNoFileComp)); err != nil {
+	rootCmd.PersistentFlags().StringVarP(&outputFormat, "output-format", "o", "auto", "[auto|a|yaml|y|json|j|props|p|xml|x|tsv|t|csv|c|shell|s|lua|l] output format type.")
+	if err = rootCmd.RegisterFlagCompletionFunc("output-format", cobra.FixedCompletions([]string{"auto", "yaml", "json", "props", "xml", "tsv", "csv", "shell", "lua"}, cobra.ShellCompDirectiveNoFileComp)); err != nil {
 		panic(err)
 	}
-	rootCmd.PersistentFlags().StringVarP(&inputFormat, "input-format", "p", "auto", "[auto|a|yaml|y|props|p|xml|x|tsv|t|csv|c|toml] parse format for input. Note that json is a subset of yaml.")
-	if err = rootCmd.RegisterFlagCompletionFunc("input-format", cobra.FixedCompletions([]string{"auto", "yaml", "props", "xml", "tsv", "csv", "toml"}, cobra.ShellCompDirectiveNoFileComp)); err != nil {
+	rootCmd.PersistentFlags().StringVarP(&inputFormat, "input-format", "p", "auto", "[auto|a|yaml|y|props|p|xml|x|tsv|t|csv|c|toml|lua|l] parse format for input. Note that json is a subset of yaml.")
+	if err = rootCmd.RegisterFlagCompletionFunc("input-format", cobra.FixedCompletions([]string{"auto", "yaml", "props", "xml", "tsv", "csv", "toml", "lua"}, cobra.ShellCompDirectiveNoFileComp)); err != nil {
 		panic(err)
 	}
 
